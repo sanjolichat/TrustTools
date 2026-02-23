@@ -61,7 +61,7 @@
         .logo-icon {
             width: 44px;
             height: 44px;
-            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAAADTQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAAAAAAAAAAAAAAAAY2pydAAA/9sAQwABAQEBAQIBAQICAQICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgkLDAwMDAwMDAwMDAwMDAwM/9sAQwEBAQEBAQIBAQICAQICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgkLDAwMDAwMDAwMDAwMDAwM/8AAEQgALAAsAwEiAAIRAQEAPwB5mGYxmdHLVgv1Lq1aKklGUZfx3HGSZ0sKOZhYWF9QABlRjMZjMZjMYwAA//Z');
+            background-image: url('assets/logo.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -1056,7 +1056,7 @@
                 <div style="max-width: 700px; margin: 0 auto; text-align: center;">
                     <div style="margin-bottom: 2rem; padding: 2rem; background: var(--cream); border: 2px solid var(--primary);">
                         <h3 style="color: var(--dark); margin-bottom: 0.75rem; font-size: 1.2rem; font-weight: 700;">Email Us</h3>
-                        <p style="color: var(--primary); font-size: 1.1rem; font-weight: 600;">hello@clickwise.org</p>
+                        <p style="color: var(--primary); font-size: 1.1rem; font-weight: 600;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2048454c4c4f60434c49434b574953450e4f5247">[email&#160;protected]</a></p>
                         <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 0.5rem;">We respond to all inquiries within 24 hours.</p>
                     </div>
 
@@ -1107,6 +1107,62 @@
     </footer>
 
     <script>
+        function showSection(sectionId, event) {
+            if (event) event.preventDefault();
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            const navBtns = document.querySelectorAll('.nav-btn');
+            const btnIndex = ['home', 'framework', 'tools', 'guides', 'contact'].indexOf(sectionId);
+            if (btnIndex >= 0 && navBtns[btnIndex]) {
+                navBtns[btnIndex].classList.add('active');
+            }
+            window.scrollTo(0, 0);
+        }
+
+        function filterTools(risk, event) {
+            event.preventDefault();
+            document.querySelectorAll('.tool-card').forEach(card => {
+                card.style.display = (risk === 'all' || card.dataset.risk === risk) ? 'block' : 'none';
+            });
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function loadGuide(guideId) {
+            const guides = {
+                'spotting-unsafe': '<button class="back-button" onclick="location.reload()">← Back to Guides</button><h1>How to Spot Unsafe Websites</h1><h2>Red Flags to Watch For</h2><p><strong>Too Many Pop-Ups & Ads:</strong> Sketchy sites are filled with aggressive ads and pop-ups.</p><p><strong>Asks for Excessive Personal Information:</strong> Does the site ask for SSN, credit card, or mother\'s maiden name when it shouldn\'t? Be suspicious.</p><p><strong>No Privacy Policy:</strong> Every legitimate website has a privacy policy. If you can\'t find one, that\'s a huge red flag.</p><p><strong>Suspicious URLs:</strong> Check the website address. Scam sites often misspell real domains (like "amaz0n.com").</p><p><strong>No HTTPS:</strong> Look for the padlock icon. If the site doesn\'t use HTTPS, your data isn\'t protected.</p><p><strong>Poor Grammar & Spelling:</strong> Professional sites have polished content. Multiple errors indicate an unprofessional site.</p><p><strong>Promises That Sound Too Good:</strong> Free money, guaranteed grades? Probably a scam.</p><p><strong>No Contact Information:</strong> Real companies have ways to contact them.</p><h2>What to Do</h2><p>When you encounter a suspicious website, simply leave and find an alternative. Trust your instincts—if something feels off, it probably is.</p>',
+                'privacy-toolkit': '<button class="back-button" onclick="location.reload()">← Back to Guides</button><h1>Your Digital Privacy Toolkit</h1><h2>Essential Tools & Practices</h2><p><strong>Use Strong, Unique Passwords:</strong> Create 12+ character passwords with uppercase, lowercase, numbers, symbols. Don\'t reuse passwords.</p><p><strong>Enable Two-Factor Authentication:</strong> This adds extra security. Even if someone has your password, they need the second factor.</p><p><strong>Review Privacy Settings:</strong> Regularly check social media and app privacy settings.</p><p><strong>Be Careful What You Share:</strong> Don\'t share sensitive info unless necessary.</p><p><strong>Use a Password Manager:</strong> Tools like Bitwarden or 1Password securely store passwords.</p><p><strong>Keep Software Updated:</strong> Updates patch vulnerabilities. Enable automatic updates.</p><p><strong>Check What Data Apps Collect:</strong> Read privacy policies before installing apps.</p><p><strong>Use HTTPS Sites:</strong> Look for the lock icon. Never enter sensitive info on non-HTTPS sites.</p><h2>Your Rights</h2><p>In many countries, you have the right to: Request what data companies have about you, Delete your data, Opt out of data selling, Know how your data is used.</p>',
+                'academic-integrity': '<button class="back-button" onclick="location.reload()">← Back to Guides</button><h1>Academic Integrity & AI Ethics</h1><h2>What\'s OK? What\'s Not?</h2><p><strong>OK - Use AI to:</strong> Brainstorm ideas, Understand concepts, Get writing feedback, Practice problems, Understand tricky topics</p><p><strong>NOT OK - Use AI to:</strong> Write essays to submit as your own, Do your homework, Take tests, Submit AI writing without disclosure</p><h2>The Difference</h2><p>Using AI as a LEARNING TOOL is ethical. Using it as a SHORTCUT that bypasses learning is cheating.</p><h2>Always Cite AI Use</h2><p>If your teacher allows AI, mention which tools you used and how.</p><h2>Check Your School\'s Policy</h2><p>Different schools have different AI policies. Know your school\'s rules before using AI tools.</p><h2>Why It Matters</h2><p>When you cheat, you don\'t learn the material, and the consequences (expulsion, permanent record) can destroy your future.</p>',
+                'chatgpt-responsible': '<button class="back-button" onclick="location.reload()">← Back to Guides</button><h1>How to Use ChatGPT Responsibly</h1><h2>Best Practices</h2><p><strong>Check Your School\'s Policy First:</strong> Some schools allow ChatGPT, others don\'t.</p><p><strong>Use It for Learning, Not Shortcuts:</strong> Ask it to explain concepts, brainstorm ideas. Don\'t ask it to write essays.</p><p><strong>Always Verify Facts:</strong> ChatGPT can confidently state false information. Cross-check everything.</p><p><strong>Don\'t Share Sensitive Info:</strong> Your conversations may be reviewed.</p><p><strong>Understand Its Limitations:</strong> Knowledge cutoff is April 2024. It can make mistakes.</p><p><strong>Cite It If You Use It:</strong> Be transparent about AI assistance.</p><h2>Red Flags</h2><p>Don\'t rely on ChatGPT for: Medical advice, Legal advice, Financial decisions, Homework submitted as entirely your own</p><h2>The Bottom Line</h2><p>ChatGPT is a tool, not a replacement for learning.</p>'
+            };
+            const guideContent = document.getElementById('guide-content');
+            if (guideContent) {
+                guideContent.innerHTML = guides[guideId] || '<p>Guide not found</p>';
+            }
+        }
+
+        function openToolModal(toolId) {
+            const modal = document.getElementById('toolModal');
+            const modalContent = document.getElementById('modalContent');
+            const toolCard = document.querySelector(`[onclick="openToolModal('${toolId}')"]`);
+            if (toolCard) {
+                modalContent.innerHTML = toolCard.innerHTML;
+                modal.style.display = 'flex';
+            }
+        }
+
+        window.closeModal = function() {
+            document.getElementById('toolModal').style.display = 'none';
+        }
+
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('toolModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
         const toolData = {
             khanmigo: { title: 'Khanmigo', site: 'khanmigo.org', risk: 'low', content: '<h2>Khanmigo - Low Risk</h2><h3>What It Does</h3><p>AI tutor by Khan Academy using Socratic method—asks guiding questions rather than giving answers.</p><h3>Data Collection: Low</h3><p>Minimal data required. Parental consent for under 18.</p><h3>Data Protection: Low</h3><p>Nonprofit model. Encrypted. No breaches reported.</p><h3>Third-Party Sharing: Low</h3><p>No data selling. No ads.</p><h3>Legal Compliance: Low</h3><p>COPPA and FERPA compliant.</p><h3>Academic Integrity: Low</h3><p>Designed to teach concepts, not provide shortcuts.</p><h3>Recommendation</h3><p>One of the safest AI tools for students. Highly recommended.</p>' },
             'khan-academy': { title: 'Khan Academy', site: 'khanacademy.org', risk: 'low', content: '<h2>Khan Academy - Low Risk</h2><h3>What It Does</h3><p>Free platform with educational videos, practice problems, and progress tracking.</p><h3>Data Collection: Low</h3><p>Minimal. Only needs email for progress tracking.</p><h3>Data Protection: Low</h3><p>Nonprofit. No breaches in history.</p><h3>Third-Party Sharing: Low</h3><p>No ads. No data selling.</p><h3>Legal Compliance: Low</h3><p>COPPA and FERPA compliant.</p><h3>Academic Integrity: Low</h3><p>Educational content designed to teach concepts.</p><h3>Recommendation</h3><p>Excellent, trustworthy resource. Highly recommended.</p>' },
@@ -1209,12 +1265,4 @@
             `;
         }
 
-        window.onclick = function(event) {
-            const modal = document.getElementById('toolModal');
-            if (event.target == modal) {
-                modal.classList.remove('active');
-            }
-        }
-    </script>
-</body>
-</html>
+        window.onclick
