@@ -61,7 +61,7 @@
         .logo-icon {
             width: 44px;
             height: 44px;
-            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAAADTQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAAAAAAAAAAAAAAAAY2pydAAA/9sAQwABAQEBAQIBAQICAQICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgkLDAwMDAwMDAwMDAwMDAwM/9sAQwEBAQEBAQIBAQICAQICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgkLDAwMDAwMDAwMDAwMDAwM/8AAEQgALAAsAwEiAAIRAQEAPwB5mGYxmdHLVgv1Lq1aKklGUZfx3HGSZ0sKOZhYWF9QABlRjMZjMZjMYwAA//Z');
+            background-image: url('assets/logo.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -1056,7 +1056,7 @@
                 <div style="max-width: 700px; margin: 0 auto; text-align: center;">
                     <div style="margin-bottom: 2rem; padding: 2rem; background: var(--cream); border: 2px solid var(--primary);">
                         <h3 style="color: var(--dark); margin-bottom: 0.75rem; font-size: 1.2rem; font-weight: 700;">Email Us</h3>
-                        <p style="color: var(--primary); font-size: 1.1rem; font-weight: 600;">hello@clickwise.org</p>
+                        <p style="color: var(--primary); font-size: 1.1rem; font-weight: 600;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2048454c4c4f60434c49434b574953450e4f5247">[email&#160;protected]</a></p>
                         <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 0.5rem;">We respond to all inquiries within 24 hours.</p>
                     </div>
 
@@ -1106,7 +1106,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         const toolData = {
             khanmigo: { title: 'Khanmigo', site: 'khanmigo.org', risk: 'low', content: '<h2>Khanmigo - Low Risk</h2><h3>What It Does</h3><p>AI tutor by Khan Academy using Socratic method—asks guiding questions rather than giving answers.</p><h3>Data Collection: Low</h3><p>Minimal data required. Parental consent for under 18.</p><h3>Data Protection: Low</h3><p>Nonprofit model. Encrypted. No breaches reported.</p><h3>Third-Party Sharing: Low</h3><p>No data selling. No ads.</p><h3>Legal Compliance: Low</h3><p>COPPA and FERPA compliant.</p><h3>Academic Integrity: Low</h3><p>Designed to teach concepts, not provide shortcuts.</p><h3>Recommendation</h3><p>One of the safest AI tools for students. Highly recommended.</p>' },
             'khan-academy': { title: 'Khan Academy', site: 'khanacademy.org', risk: 'low', content: '<h2>Khan Academy - Low Risk</h2><h3>What It Does</h3><p>Free platform with educational videos, practice problems, and progress tracking.</p><h3>Data Collection: Low</h3><p>Minimal. Only needs email for progress tracking.</p><h3>Data Protection: Low</h3><p>Nonprofit. No breaches in history.</p><h3>Third-Party Sharing: Low</h3><p>No ads. No data selling.</p><h3>Legal Compliance: Low</h3><p>COPPA and FERPA compliant.</p><h3>Academic Integrity: Low</h3><p>Educational content designed to teach concepts.</p><h3>Recommendation</h3><p>Excellent, trustworthy resource. Highly recommended.</p>' },
@@ -1209,12 +1209,4 @@
             `;
         }
 
-        window.onclick = function(event) {
-            const modal = document.getElementById('toolModal');
-            if (event.target == modal) {
-                modal.classList.remove('active');
-            }
-        }
-    </script>
-</body>
-</html>
+        window.onclick
