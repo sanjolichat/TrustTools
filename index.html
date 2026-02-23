@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClickWise - Safe AI & Resource Guide for Students</title>
+    <title>ClickWise - Smart Choices About Digital Tools</title>
     <style>
         * {
             margin: 0;
@@ -12,376 +12,439 @@
         }
 
         :root {
-            --primary: #1e3a8a;
-            --secondary: #0f766e;
-            --accent: #dc2626;
-            --light: #f8fafc;
-            --dark: #1e293b;
-            --success: #16a34a;
-            --warning: #ea580c;
-            --neutral: #64748b;
+            --primary: #1e40af;
+            --secondary: #0369a1;
+            --accent: #059669;
+            --warning: #dc2626;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --border: #e5e7eb;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--dark);
-            background: linear-gradient(135deg, #f0f4f8 0%, #f8fafc 100%);
-            min-height: 100vh;
+            background: white;
         }
 
-        /* Header */
+        /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            background: white;
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.95;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Navigation */
         nav {
-            background: white;
-            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            gap: 2rem;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
             flex-wrap: wrap;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 100px;
-            z-index: 99;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--primary);
-            font-weight: 600;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
         }
 
         nav a:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f9ff 0%, #f0f4f8 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .secondary-button {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .secondary-button:hover {
             background: var(--primary);
             color: white;
             transform: translateY(-2px);
         }
 
-        /* Main Container */
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 2rem;
         }
 
-        /* Hero Section */
-        .hero {
-            background: white;
-            border-radius: 1rem;
-            padding: 3rem;
+        /* Section Styling */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
             margin-bottom: 3rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            animation: slideUp 0.8s ease;
         }
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
         }
 
-        .hero h2 {
+        .section-header p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Mission Section */
+        .mission {
+            background: white;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .mission-text h3 {
+            font-size: 1.5rem;
             color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 2rem;
         }
 
-        .hero p {
-            color: var(--neutral);
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
+        .mission-text p {
+            color: #4b5563;
             line-height: 1.8;
+            margin-bottom: 1rem;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+        .mission-list {
+            list-style: none;
+            margin-top: 1.5rem;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
+        .mission-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: #374151;
         }
 
-        /* Section Styles */
-        section {
-            margin-bottom: 3rem;
+        .mission-list li::before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.3rem;
         }
 
-        section h2 {
-            color: var(--primary);
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            text-align: center;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
-            border-radius: 2px;
-        }
-
-        /* Assessment Grid */
-        .assessment-framework {
-            background: white;
+        .mission-visual {
+            background: linear-gradient(135deg, #dbeafe 0%, #dcfce7 100%);
+            padding: 3rem;
             border-radius: 1rem;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .mission-visual p {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        /* Framework Section */
+        .framework {
+            background: #f9fafb;
         }
 
         .framework-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
 
         .framework-card {
-            border-left: 5px solid var(--primary);
-            padding: 1.5rem;
-            background: linear-gradient(135deg, #f8fafc 0%, #f0f4f8 100%);
-            border-radius: 0.5rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .framework-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .framework-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
         .framework-card h3 {
-            color: var(--primary);
-            margin-bottom: 0.75rem;
             font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
         }
 
         .framework-card p {
-            color: var(--neutral);
+            color: #6b7280;
             font-size: 0.95rem;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
-        /* Risk Rating Cards */
+        /* Tools Section */
+        .tools-section {
+            background: white;
+        }
+
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .tool-card {
             background: white;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--neutral);
-            position: relative;
+            border-radius: 0.75rem;
             overflow: hidden;
-        }
-
-        .tool-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, rgba(15, 118, 110, 0.05) 0%, rgba(30, 58, 138, 0.05) 100%);
-            border-radius: 50%;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
         }
 
         .tool-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
         }
 
-        .tool-card.high-risk {
-            border-top-color: var(--accent);
+        .tool-card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
         }
 
-        .tool-card.medium-risk {
-            border-top-color: var(--warning);
-        }
-
-        .tool-card.low-risk {
-            border-top-color: var(--success);
-        }
-
-        .tool-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .tool-card h3 {
+        .tool-card-header h3 {
             color: var(--dark);
-            font-size: 1.1rem;
             margin-bottom: 0.5rem;
-            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .tool-card-header p {
+            font-size: 0.85rem;
+            color: #6b7280;
         }
 
         .risk-badge {
             display: inline-block;
-            padding: 0.5rem 1rem;
+            padding: 0.4rem 1rem;
             border-radius: 9999px;
+            font-size: 0.8rem;
             font-weight: 700;
-            font-size: 0.85rem;
+            margin-top: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .risk-badge.low {
-            background: rgba(22, 163, 74, 0.1);
-            color: var(--success);
+        .risk-low {
+            background: #dcfce7;
+            color: #15803d;
         }
 
-        .risk-badge.medium {
-            background: rgba(234, 88, 12, 0.1);
-            color: var(--warning);
+        .risk-medium {
+            background: #fed7aa;
+            color: #b45309;
         }
 
-        .risk-badge.high {
-            background: rgba(220, 38, 38, 0.1);
-            color: var(--accent);
+        .risk-high {
+            background: #fecaca;
+            color: #b91c1c;
         }
 
-        .tool-card p {
-            color: var(--neutral);
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-        }
-
-        .concerns {
-            background: rgba(0,0,0,0.03);
-            padding: 1rem;
-            border-radius: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--dark);
-            margin-top: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .concerns strong {
-            color: var(--primary);
-        }
-
-        /* Resources */
-        .resources-section {
-            background: white;
-            border-radius: 1rem;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .resource-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .resource-list li {
-            background: linear-gradient(135deg, #f8fafc 0%, #f0f4f8 100%);
+        .tool-card-body {
             padding: 1.5rem;
-            border-radius: 0.5rem;
-            border-left: 4px solid var(--secondary);
-            transition: all 0.3s ease;
         }
 
-        .resource-list li:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .resource-list strong {
-            color: var(--primary);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .resource-list p {
-            color: var(--neutral);
+        .tool-card-body p {
+            color: #6b7280;
             font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .tool-card-body strong {
+            color: var(--dark);
+        }
+
+        /* Guides Section */
+        .guides-section {
+            background: #f9fafb;
+        }
+
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .guide-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .guide-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .guide-card h3 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .guide-card p {
+            color: #6b7280;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* Events Section */
+        .events-section {
+            background: white;
+        }
+
         .events-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
 
         .event-card {
             background: white;
-            border-radius: 1rem;
+            border-radius: 0.75rem;
             padding: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            border-left: 5px solid var(--secondary);
+            border: 1px solid var(--border);
             transition: all 0.3s ease;
         }
 
         .event-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--secondary);
         }
 
         .event-date {
@@ -390,7 +453,7 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
 
         .event-card h3 {
@@ -400,8 +463,9 @@
         }
 
         .event-card p {
-            color: var(--neutral);
+            color: #6b7280;
             margin-bottom: 1rem;
+            line-height: 1.6;
         }
 
         .event-register {
@@ -417,435 +481,503 @@
             transform: translateX(5px);
         }
 
-        /* Guide Section */
-        .guides-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .guide-card {
-            background: linear-gradient(135deg, white 0%, #f8fafc 100%);
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
             border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            margin: 4rem 2rem;
         }
 
-        .guide-card:hover {
-            border-color: var(--secondary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-        }
-
-        .guide-card .icon {
-            font-size: 2.5rem;
+        .cta-section h2 {
+            font-size: 2.2rem;
             margin-bottom: 1rem;
+            color: white;
         }
 
-        .guide-card h3 {
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button-white {
+            background: white;
             color: var(--primary);
-            margin-bottom: 0.75rem;
-            font-size: 1.2rem;
+            padding: 0.8rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
-        .guide-card p {
-            color: var(--neutral);
-            font-size: 0.95rem;
+        .cta-button-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: var(--dark);
             color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            padding: 3rem 2rem;
         }
 
-        footer p {
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-section a {
+            display: block;
+            color: #d1d5db;
+            text-decoration: none;
             margin-bottom: 0.5rem;
-            opacity: 0.95;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
         }
 
-        footer a {
-            color: #e0e7ff;
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4b5563;
+            padding-top: 2rem;
+            text-align: center;
+            color: #d1d5db;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom a {
+            color: #d1d5db;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
-        footer a:hover {
+        .footer-bottom a:hover {
             color: white;
-            text-decoration: underline;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            header p {
-                font-size: 0.95rem;
-            }
-
-            nav {
+            nav ul {
                 gap: 1rem;
-                padding: 0.75rem 1rem;
-            }
-
-            nav a {
-                padding: 0.4rem 0.8rem;
                 font-size: 0.9rem;
             }
 
-            .container {
-                padding: 1rem;
+            .hero h1 {
+                font-size: 2rem;
             }
 
-            section h2 {
-                font-size: 1.5rem;
+            .hero p {
+                font-size: 1rem;
             }
 
-            .hero {
-                padding: 2rem 1.5rem;
+            .mission-grid {
+                grid-template-columns: 1fr;
             }
 
-            .hero h2 {
-                font-size: 1.5rem;
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .cta-button, .secondary-button {
+                width: 100%;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
             }
         }
 
         /* Animations */
-        @keyframes fadeIn {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        .tool-card {
-            animation: fadeIn 0.6s ease;
+        .framework-card, .tool-card, .guide-card, .event-card {
+            animation: fadeInUp 0.6s ease forwards;
         }
 
-        .tool-card:nth-child(1) { animation-delay: 0.1s; }
-        .tool-card:nth-child(2) { animation-delay: 0.2s; }
-        .tool-card:nth-child(3) { animation-delay: 0.3s; }
+        .framework-card:nth-child(1) { animation-delay: 0.1s; }
+        .framework-card:nth-child(2) { animation-delay: 0.2s; }
+        .framework-card:nth-child(3) { animation-delay: 0.3s; }
+        .framework-card:nth-child(4) { animation-delay: 0.4s; }
+        .framework-card:nth-child(5) { animation-delay: 0.5s; }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Navigation -->
     <header>
-        <h1>🔒 ClickWise</h1>
-        <p>Your guide to safe AI tools, secure resources, and responsible digital learning</p>
+        <nav>
+            <a href="#home" class="logo">
+                🎯 <span>ClickWise</span>
+            </a>
+            <ul>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#framework">Framework</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#guides">Guides</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#tools" class="cta-button">Explore</a>
+        </nav>
     </header>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#framework">Framework</a>
-        <a href="#tools">Tools & Resources</a>
-        <a href="#guides">Learning Guides</a>
-        <a href="#events">Events</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Make <span>Smart Choices</span> About Digital Tools</h1>
+            <p>ClickWise helps students evaluate the AI tools, homework sites, and online resources they use every day—so they can make informed decisions about their privacy, security, and digital safety.</p>
+            <div class="hero-buttons">
+                <a href="#tools" class="cta-button">Explore Tool Database</a>
+                <a href="#framework" class="secondary-button">Learn Our Framework</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <h2>Are You Using the Right Tools Safely?</h2>
-            <p>
-                Students today use AI and online homework resources without fully understanding the privacy, security, and ethical risks. 
-                ClickWise is a student-led initiative that empowers you to make informed choices about the digital tools you use for learning.
-            </p>
-            <p>
-                We provide transparent risk assessments, practical guides, and community events to help you learn securely and responsibly.
-            </p>
-            <a href="#tools" class="cta-button">Explore Safe Tools →</a>
-        </section>
-
-        <!-- Assessment Framework -->
-        <section class="assessment-framework" id="framework">
-            <h2>Our Risk Assessment Framework</h2>
-            <p style="text-align: center; color: var(--neutral); margin-bottom: 2rem;">
-                Every tool and resource is evaluated across five clear criteria to determine its safety and security level.
-            </p>
-            
-            <div class="framework-grid">
-                <div class="framework-card">
-                    <h3>📊 Data Collection</h3>
-                    <p>What personal information does the platform ask for? Does it require more than necessary? Can you use it anonymously?</p>
+    <!-- Mission Section -->
+    <section class="mission" id="mission">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-text">
+                    <h3>Why ClickWise?</h3>
+                    <p>Students use AI tools and homework sites daily without understanding the risks. We're fixing that.</p>
+                    <p>ClickWise is a student-led initiative that provides transparent, evidence-based evaluations of digital tools. We help you understand what data is collected, how it's protected, and whether a tool aligns with academic integrity.</p>
+                    <ul class="mission-list">
+                        <li>Transparent risk assessment framework</li>
+                        <li>Easy-to-understand tool ratings</li>
+                        <li>Practical digital literacy guides</li>
+                        <li>Community of informed students</li>
+                    </ul>
                 </div>
-                <div class="framework-card">
-                    <h3>🔐 Data Protection</h3>
-                    <p>How is your data encrypted? Does the site have a privacy policy? Are they transparent about security practices?</p>
-                </div>
-                <div class="framework-card">
-                    <h3>📱 Third-Party Sharing</h3>
-                    <p>Does the platform sell or share your data with advertisers? Are there unnecessary trackers or ads?</p>
-                </div>
-                <div class="framework-card">
-                    <h3>✅ Compliance</h3>
-                    <p>Does it follow COPPA (Children's Online Privacy), FERPA, and other student protection laws?</p>
-                </div>
-                <div class="framework-card">
-                    <h3>🎓 Academic Integrity</h3>
-                    <p>Is the tool designed to help learning, or to enable cheating? Does it teach concepts or just give answers?</p>
+                <div class="mission-visual">
+                    <p style="font-size: 3rem; margin-bottom: 1rem;">🔐</p>
+                    <p><strong>Privacy</strong> • <strong>Security</strong> • <strong>Ethics</strong></p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">We evaluate tools across 5 key criteria so you know exactly what you're getting into.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Tools & Resources Section -->
-        <section id="tools">
-            <h2>Popular AI Tools & Homework Resources</h2>
-            <p style="text-align: center; color: var(--neutral); margin-bottom: 2rem;">
-                Evaluated based on our framework. Click on any tool to learn more about its privacy practices and best uses.
-            </p>
+    <!-- Framework Section -->
+    <section class="framework" id="framework">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Transparent Framework</h2>
+                <p>Every tool is evaluated across 5 clear criteria grounded in concrete factors. No hidden agenda—just honest assessment.</p>
+            </div>
+            <div class="framework-grid">
+                <div class="framework-card">
+                    <div class="framework-card-icon">📊</div>
+                    <h3>Data Collection</h3>
+                    <p><strong>Criteria:</strong> Does it ask for unnecessary personal info? Can you use it anonymously? What fields are required?</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-card-icon">🔐</div>
+                    <h3>Data Protection</h3>
+                    <p><strong>Criteria:</strong> Is data encrypted in transit? Do they have security certifications? Track record of breaches?</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-card-icon">📱</div>
+                    <h3>Third-Party Sharing</h3>
+                    <p><strong>Criteria:</strong> Do they sell data to advertisers? Are there hidden trackers? Aggressive ad networks?</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-card-icon">✅</div>
+                    <h3>Legal Compliance</h3>
+                    <p><strong>Criteria:</strong> COPPA compliance (under 13)? FERPA compliance (student records)? Account requirements?</p>
+                </div>
+                <div class="framework-card">
+                    <div class="framework-card-icon">🎓</div>
+                    <h3>Academic Integrity</h3>
+                    <p><strong>Criteria:</strong> Designed to teach concepts? Or enable cheating? Does it encourage critical thinking?</p>
+                </div>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 0.75rem; margin-top: 2rem; border: 1px solid var(--border);">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">📋 Risk Rating Scale</h3>
+                <p style="margin-bottom: 1rem;"><strong style="color: #15803d;">✓ LOW RISK:</strong> Safe to use. Transparent privacy practices. Designed for learning. Good for students.</p>
+                <p style="margin-bottom: 1rem;"><strong style="color: #b45309;">⚠ MEDIUM RISK:</strong> Use with caution. Review privacy settings. Be mindful of use. Follow school guidelines.</p>
+                <p><strong style="color: #b91c1c;">✗ HIGH RISK:</strong> Avoid if possible. Privacy violations, cheating facilitation, or security issues. Not recommended.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Tools Section -->
+    <section class="tools-section" id="tools">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tool Database</h2>
+                <p>Transparent evaluations of popular AI tools and homework resources students use. Each rated on our 5-criterion framework.</p>
+            </div>
             <div class="tools-grid">
                 <!-- Low Risk Tools -->
-                <div class="tool-card low-risk">
-                    <div class="tool-header">
-                        <div>
-                            <h3>Khanmigo</h3>
-                            <p style="font-size: 0.85rem; color: var(--neutral); margin: 0;">Khan Academy's AI Tutor</p>
-                        </div>
-                        <span class="risk-badge low">Low Risk</span>
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <h3>Khanmigo</h3>
+                        <p>AI Tutor by Khan Academy</p>
+                        <span class="risk-badge risk-low">Low Risk</span>
                     </div>
-                    <p><strong>What it does:</strong> AI tutor that guides you through problems using Socratic method (asks questions instead of giving answers).</p>
-                    <p><strong>Good for:</strong> Concept learning, step-by-step problem solving, deep understanding.</p>
-                    <div class="concerns">
-                        <strong>Privacy:</strong> Built by trusted nonprofit. Student data is protected. No ads. Requires parent approval for under 18.
+                    <div class="tool-card-body">
+                        <p><strong>What it does:</strong> AI tutor using Socratic method (asks questions instead of giving answers).</p>
+                        <p><strong>Best for:</strong> Learning math, science, humanities with guided problem-solving.</p>
+                        <p><strong>Privacy:</strong> Built by trusted nonprofit. No ads. Student data protected. Requires parental consent for under 18.</p>
                     </div>
                 </div>
 
-                <div class="tool-card low-risk">
-                    <div class="tool-header">
-                        <div>
-                            <h3>Wolfram Alpha</h3>
-                            <p style="font-size: 0.85rem; color: var(--neutral); margin: 0;">Computational Knowledge Engine</p>
-                        </div>
-                        <span class="risk-badge low">Low Risk</span>
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <h3>Wolfram Alpha</h3>
+                        <p>Computational Knowledge Engine</p>
+                        <span class="risk-badge risk-low">Low Risk</span>
                     </div>
-                    <p><strong>What it does:</strong> Solves math and science problems with step-by-step explanations, not just answers.</p>
-                    <p><strong>Good for:</strong> Math, physics, chemistry—understanding methodology.</p>
-                    <div class="concerns">
-                        <strong>Privacy:</strong> Clear privacy policy, minimal data collection. Pro version removes ads. No unnecessary tracking.
+                    <div class="tool-card-body">
+                        <p><strong>What it does:</strong> Solves math and science problems with step-by-step explanations.</p>
+                        <p><strong>Best for:</strong> Understanding math methodology, not just getting answers.</p>
+                        <p><strong>Privacy:</strong> Clear privacy policy. Minimal data collection. Pro version removes ads. No unnecessary tracking.</p>
                     </div>
                 </div>
 
-                <div class="tool-card low-risk">
-                    <div class="tool-header">
-                        <div>
-                            <h3>Quizlet Q-Chat</h3>
-                            <p style="font-size: 0.85rem; color: var(--neutral); margin: 0;">AI Study Partner</p>
-                        </div>
-                        <span class="risk-badge low">Low Risk</span>
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <h3>Quizlet</h3>
+                        <p>Study Tool with AI</p>
+                        <span class="risk-badge risk-low">Low Risk</span>
                     </div>
-                    <p><strong>What it does:</strong> AI study buddy combined with millions of flashcard sets for memorization and concept testing.</p>
-                    <p><strong>Good for:</strong> Vocabulary, history, memorization-heavy subjects.</p>
-                    <div class="concerns">
-                        <strong>Privacy:</strong> Student-friendly. Free version available. Limited data collection. Privacy controls available.
+                    <div class="tool-card-body">
+                        <p><strong>What it does:</strong> Flashcards, spaced repetition, and AI study partner for memorization.</p>
+                        <p><strong>Best for:</strong> Vocabulary, history, memorization-heavy subjects.</p>
+                        <p><strong>Privacy:</strong> Student-friendly. Free version available. Limited data collection. Privacy controls available.</p>
                     </div>
                 </div>
 
                 <!-- Medium Risk Tools -->
-                <div class="tool-card medium-risk">
-                    <div class="tool-header">
-                        <div>
-                            <h3>ChatGPT</h3>
-                            <p style="font-size: 0.85rem; color: var(--neutral); margin: 0;">General-purpose AI Assistant</p>
-                        </div>
-                        <span class="risk-badge medium">Medium Risk</span>
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <h3>ChatGPT</h3>
+                        <p>General AI Assistant</p>
+                        <span class="risk-badge risk-medium">Medium Risk</span>
                     </div>
-                    <p><strong>What it does:</strong> Powerful AI that can explain concepts, write essays, debug code, and much more.</p>
-                    <p><strong>Good for:</strong> Brainstorming, concept explanation, research—not for completing assignments.</p>
-                    <div class="concerns">
-                        <strong>Concerns:</strong> Requires account creation (personal data). Uses your data for training. Doesn't verify accuracy. Can enable plagiarism if misused.
+                    <div class="tool-card-body">
+                        <p><strong>What it does:</strong> Powerful AI for explaining concepts, writing assistance, brainstorming.</p>
+                        <p><strong>Best for:</strong> Research, concept explanation, brainstorming—NOT for completing assignments.</p>
+                        <p><strong>Caution:</strong> Requires account. Data used for training. Can enable plagiarism if misused. Verify accuracy.</p>
                     </div>
                 </div>
 
-                <div class="tool-card medium-risk">
-                    <div class="tool-header">
-                        <div>
-                            <h3>Photomath</h3>
-                            <p style="font-size: 0.85rem; color: var(--neutral); margin: 0;">Math Problem Solver</p>
-                        </div>
-                        <span class="risk-badge medium">Medium Risk</span>
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <h3>Photomath</h3>
+                        <p>Math Problem Solver</p>
+                        <span class="risk-badge risk-medium">Medium Risk</span>
                     </div>
-                    <p><strong>What it does:</strong> Scan math problems, get step-by-step solutions via OCR technology.</p>
-                    <p><strong>Good for:</strong> Understanding methodology, checking work, algebra through early calculus.</p>
-                    <div class="concerns">
-                        <strong>Concerns:</strong> Easy to misuse as shortcut. Requires account. Shows ads in free version. Limited parental controls.
+                    <div class="tool-card-body">
+                        <p><strong>What it does:</strong> Scan math problems, get step-by-step solutions via OCR.</p>
+                        <p><strong>Best for:</strong> Understanding methodology, checking work, algebra through calculus.</p>
+                        <p><strong>Caution:</strong> Easy to misuse as shortcut. Requires account. Ads in free version. Limited parental controls.</p>
                     </div>
                 </div>
 
-                <div class="tool-card medium-risk">
-                    <div class="tool-header">
-                        <div>
-                            <h3>Brainly</h3>
-                            <p style="font-size: 0.85rem; color: var(--neutral); margin: 0;">Crowdsourced Q&A Platform</p>
-                        </div>
-                        <span class="risk-badge medium">Medium Risk</span>
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <h3>Brainly</h3>
+                        <p>Crowdsourced Q&A Platform</p>
+                        <span class="risk-badge risk-medium">Medium Risk</span>
                     </div>
-                    <p><strong>What it does:</strong> Community of students and experts answering homework questions. AI supplements human answers.</p>
-                    <p><strong>Good for:</strong> Getting different perspectives, peer learning.</p>
-                    <div class="concerns">
-                        <strong>Concerns:</strong> Quality varies. Crowdsourced answers may be inaccurate. Account required. Ads in free version.
+                    <div class="tool-card-body">
+                        <p><strong>What it does:</strong> Community of students answering homework questions + AI supplements.</p>
+                        <p><strong>Best for:</strong> Getting different perspectives, peer learning.</p>
+                        <p><strong>Caution:</strong> Quality varies. Crowdsourced answers may be inaccurate. Account required. Ads present.</p>
                     </div>
                 </div>
 
                 <!-- High Risk Tools -->
-                <div class="tool-card high-risk">
-                    <div class="tool-header">
-                        <div>
-                            <h3>Essay Mill Sites</h3>
-                            <p style="font-size: 0.85rem; color: var(--neutral); margin: 0;">Pay-for-Essay Services</p>
-                        </div>
-                        <span class="risk-badge high">High Risk</span>
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <h3>Essay Mill Sites</h3>
+                        <p>Contract Cheating Services</p>
+                        <span class="risk-badge risk-high">High Risk</span>
                     </div>
-                    <p><strong>What it does:</strong> Services that write complete essays for you to submit as your own.</p>
-                    <p><strong>Why you shouldn't use:</strong> Direct academic dishonesty. Violates school policies.</p>
-                    <div class="concerns">
-                        <strong>Risks:</strong> School expulsion. Financial theft. Data harvesting. No learning. Legal implications.
+                    <div class="tool-card-body">
+                        <p><strong>What it does:</strong> Services that write complete essays for you to submit as your own.</p>
+                        <p><strong>Why avoid:</strong> Direct academic dishonesty. Violates school policies.</p>
+                        <p><strong>Risks:</strong> School expulsion. Financial theft. Data harvesting. Identity theft. Zero learning value.</p>
                     </div>
                 </div>
 
-                <div class="tool-card high-risk">
-                    <div class="tool-header">
-                        <div>
-                            <h3>Unvetted Homework Sites</h3>
-                            <p style="font-size: 0.85rem; color: var(--neutral); margin: 0;">Unknown Online Homework Help</p>
-                        </div>
-                        <span class="risk-badge high">High Risk</span>
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <h3>Unvetted Homework Sites</h3>
+                        <p>Unknown Homework Help Platforms</p>
+                        <span class="risk-badge risk-high">High Risk</span>
                     </div>
-                    <p><strong>What it does:</strong> Obscure websites offering homework solutions, often with aggressive ads and sketchy practices.</p>
-                    <p><strong>Why you shouldn't use:</strong> Privacy violations, malware risks, unreliable information.</p>
-                    <div class="concerns">
-                        <strong>Risks:</strong> Malware infections. Data breaches. Identity theft. Inaccurate information. Unsafe pop-ups.
+                    <div class="tool-card-body">
+                        <p><strong>What it does:</strong> Obscure websites with homework solutions and aggressive ads.</p>
+                        <p><strong>Why avoid:</strong> Privacy violations, malware risks, unreliable information.</p>
+                        <p><strong>Risks:</strong> Malware infections. Data breaches. Identity theft. Inaccurate information. Unsafe pop-ups.</p>
                     </div>
                 </div>
 
-                <div class="tool-card high-risk">
-                    <div class="tool-header">
-                        <div>
-                            <h3>Unregulated AI Tools</h3>
-                            <p style="font-size: 0.85rem; color: var(--neutral); margin: 0;">Unsecured or Sketchy AI Platforms</p>
-                        </div>
-                        <span class="risk-badge high">High Risk</span>
+                <div class="tool-card">
+                    <div class="tool-card-header">
+                        <h3>Unregulated AI Tools</h3>
+                        <p>Unsecured or Sketchy AI Platforms</p>
+                        <span class="risk-badge risk-high">High Risk</span>
                     </div>
-                    <p><strong>What it does:</strong> Unknown AI platforms that lack transparency about data practices or security.</p>
-                    <p><strong>Why you shouldn't use:</strong> No accountability. No privacy protections.</p>
-                    <div class="concerns">
-                        <strong>Risks:</strong> Complete privacy violation. Unencrypted data. No security guarantees. Potential scams.
+                    <div class="tool-card-body">
+                        <p><strong>What it does:</strong> Unknown AI platforms lacking transparency on data & security.</p>
+                        <p><strong>Why avoid:</strong> No accountability. No privacy protections.</p>
+                        <p><strong>Risks:</strong> Complete privacy violation. Unencrypted data. No security guarantees. Potential scams.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Learning Guides -->
-        <section id="guides">
-            <h2>Practical Learning Guides</h2>
-            <p style="text-align: center; color: var(--neutral); margin-bottom: 2rem;">
-                Short, student-friendly guides on how to use AI responsibly and protect your digital privacy.
-            </p>
-
+    <!-- Learning Guides Section -->
+    <section class="guides-section" id="guides">
+        <div class="container">
+            <div class="section-header">
+                <h2>Learning Guides</h2>
+                <p>Short, student-friendly guides on digital safety and responsible tool use.</p>
+            </div>
             <div class="guides-grid">
-                <a href="#" class="guide-card">
-                    <div class="icon">🔐</div>
+                <div class="guide-card">
+                    <div class="guide-card-icon">🔐</div>
                     <h3>How to Spot Unsafe Websites</h3>
-                    <p>Learn the red flags: too many ads, requests for unnecessary personal info, no privacy policy, suspicious pop-ups, and more.</p>
-                </a>
+                    <p>Learn the red flags: too many ads, unnecessary personal info requests, no privacy policy, suspicious pop-ups, and more.</p>
+                </div>
 
-                <a href="#" class="guide-card">
-                    <div class="icon">🛡️</div>
+                <div class="guide-card">
+                    <div class="guide-card-icon">🛡️</div>
                     <h3>Your Digital Privacy Toolkit</h3>
-                    <p>Passwords, VPNs, privacy settings, and practical steps to protect your personal data online.</p>
-                </a>
+                    <p>Passwords, 2FA, privacy settings, and practical steps to protect your personal data online.</p>
+                </div>
 
-                <a href="#" class="guide-card">
-                    <div class="icon">⚖️</div>
+                <div class="guide-card">
+                    <div class="guide-card-icon">⚖️</div>
                     <h3>Academic Integrity & AI Ethics</h3>
                     <p>Using AI to learn vs. using it to cheat. Understanding plagiarism, citation, and responsible AI use.</p>
-                </a>
+                </div>
 
-                <a href="#" class="guide-card">
-                    <div class="icon">🎯</div>
+                <div class="guide-card">
+                    <div class="guide-card-icon">🎯</div>
                     <h3>How to Use ChatGPT Responsibly</h3>
                     <p>ChatGPT is powerful but requires responsible use. Learn the dos and don'ts for students.</p>
-                </a>
+                </div>
 
-                <a href="#" class="guide-card">
-                    <div class="icon">📊</div>
+                <div class="guide-card">
+                    <div class="guide-card-icon">📊</div>
                     <h3>Understanding Data Collection</h3>
                     <p>What does "data collection" mean? How do apps track you? What can you control?</p>
-                </a>
+                </div>
 
-                <a href="#" class="guide-card">
-                    <div class="icon">🤔</div>
+                <div class="guide-card">
+                    <div class="guide-card-icon">🤔</div>
                     <h3>Critical Thinking with AI</h3>
                     <p>AI makes mistakes. Learn how to verify information, fact-check, and think critically about AI outputs.</p>
-                </a>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Events Section -->
-        <section id="events">
-            <h2>Upcoming Virtual Events</h2>
-            <p style="text-align: center; color: var(--neutral); margin-bottom: 2rem;">
-                Join us for free online workshops on digital safety, AI ethics, and responsible learning.
-            </p>
-
+    <!-- Events Section -->
+    <section class="events-section" id="events">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming Virtual Events</h2>
+                <p>Join us for free online workshops on digital safety, AI ethics, and responsible learning.</p>
+            </div>
             <div class="events-grid">
                 <div class="event-card">
-                    <div class="event-date">March 15, 2026 • 4:00 PM</div>
+                    <div class="event-date">March 15, 2026 • 4:00 PM EST</div>
                     <h3>AI 101: Safety & Ethics for Students</h3>
                     <p>A beginner-friendly introduction to AI tools, their benefits, risks, and how to use them responsibly. Perfect for anyone new to AI.</p>
-                    <a href="#" class="event-register">Register Now →</a>
+                    <a href="#contact" class="event-register">Register Now →</a>
                 </div>
 
                 <div class="event-card">
-                    <div class="event-date">March 22, 2026 • 5:00 PM</div>
+                    <div class="event-date">March 22, 2026 • 5:00 PM EST</div>
                     <h3>Protecting Your Digital Privacy</h3>
                     <p>Practical workshop on passwords, privacy settings, recognizing phishing, and protecting yourself from data breaches.</p>
-                    <a href="#" class="event-register">Register Now →</a>
+                    <a href="#contact" class="event-register">Register Now →</a>
                 </div>
 
                 <div class="event-card">
-                    <div class="event-date">April 5, 2026 • 4:00 PM</div>
+                    <div class="event-date">April 5, 2026 • 4:00 PM EST</div>
                     <h3>ChatGPT & Academic Integrity</h3>
                     <p>How to use ChatGPT responsibly in your schoolwork without crossing into academic dishonesty. Interactive Q&A with educators.</p>
-                    <a href="#" class="event-register">Register Now →</a>
+                    <a href="#contact" class="event-register">Register Now →</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Call to Action -->
-        <section style="text-align: center; padding: 3rem; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); border-radius: 1rem; color: white;">
-            <h2 style="color: white; border: none; padding-bottom: 0;">Join the Movement for Safe Learning</h2>
-            <p style="color: rgba(255,255,255,0.95); font-size: 1.1rem; margin-bottom: 2rem;">
-                Become a ClickWise ambassador. Help us evaluate more tools, write guides, and teach your peers about digital safety.
-            </p>
-            <a href="#contact" class="cta-button" style="background: white; color: var(--primary);">Get Involved →</a>
-        </section>
+    <!-- CTA Section -->
+    <div class="container">
+        <div class="cta-section">
+            <h2>Ready to Make Smarter Choices?</h2>
+            <p>Join thousands of students learning to evaluate digital tools responsibly. Get started with our framework and explore the tool database.</p>
+            <a href="#tools" class="cta-button-white">Explore Tool Database</a>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer id="contact">
-        <h3>ClickWise</h3>
-        <p>A student-led nonprofit initiative for safe AI and responsible digital learning.</p>
-        <p>Questions? Suggestions? Found an unsafe site? <a href="mailto:contact@clickwise.org">contact@clickwise.org</a></p>
-        <p style="margin-top: 2rem; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1rem;">
-            © 2026 ClickWise. Created by students, for students. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-        </p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ClickWise</h4>
+                <a href="#home">Home</a>
+                <a href="#mission">About Us</a>
+                <a href="#framework">Our Framework</a>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <a href="#tools">Tool Database</a>
+                <a href="#guides">Learning Guides</a>
+                <a href="#framework">Risk Framework</a>
+            </div>
+            <div class="footer-section">
+                <h4>Community</h4>
+                <a href="#events">Events</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#home">Newsletter</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="#contact">Privacy Policy</a>
+                <a href="#contact">Terms of Service</a>
+                <a href="#contact">Accessibility</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ClickWise. A student-led nonprofit initiative for digital literacy and safety.</p>
+            <p>Questions? Email us at <strong>hello@clickwise.org</strong></p>
+        </div>
     </footer>
 </body>
 </html>
